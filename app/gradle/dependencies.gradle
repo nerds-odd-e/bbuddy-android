@@ -1,5 +1,5 @@
 dependencies {
-    compile(
+    implementation(
             [group: 'com.android.support', name: 'appcompat-v7', version: libVersions.android],
             [group: 'com.android.support', name: 'design', version: libVersions.android],
             [group: 'com.android.support', name: 'support-vector-drawable', version: libVersions.android],
@@ -10,11 +10,11 @@ dependencies {
             [group: 'javax.el', name: 'javax.el-api', version: libVersions.javaxEl],
             [group: 'org.glassfish.web', name: 'javax.el', version: libVersions.javaxEl],
     )
-    compile(group: 'org.robobinding', name: 'robobinding', version: libVersions.robobinding, classifier: 'with-dependencies') {
+    implementation(group: 'org.robobinding', name: 'robobinding', version: libVersions.robobinding, classifier: 'with-dependencies') {
         exclude group: 'com.google.guava', module: 'guava'
     }
 
-    testCompile(
+    testImplementation(
             [group: 'junit', name: 'junit', version: testLibVersions.junit],
             [group: 'org.mockito', name: 'mockito-core', version: testLibVersions.mockito],
             [group: 'com.nitorcreations', name: 'junit-runners', version: testLibVersions.nestedrunner],
@@ -24,10 +24,11 @@ dependencies {
     annotationProcessor(
             [group: 'org.robobinding', name: 'codegen', version: libVersions.robobinding],
             [group: 'com.google.dagger', name: 'dagger-compiler', version: libVersions.dagger],
+            [group: 'com.google.dagger', name: 'dagger-android-support', version: libVersions.dagger],
             [group: 'org.projectlombok', name: 'lombok', version: providedLibVersions.lombok],
     )
 
-    provided(
+    compileOnly(
             [group: 'org.projectlombok', name: 'lombok', version: providedLibVersions.lombok],
     )
 }
