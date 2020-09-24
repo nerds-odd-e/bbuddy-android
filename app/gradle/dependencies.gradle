@@ -25,10 +25,17 @@ dependencies {
             [group: 'org.robobinding', name: 'codegen', version: libVersions.robobinding],
             [group: 'com.google.dagger', name: 'dagger-compiler', version: libVersions.dagger],
             [group: 'com.google.dagger', name: 'dagger-android-support', version: libVersions.dagger],
-            [group: 'org.projectlombok', name: 'lombok', version: providedLibVersions.lombok],
+//            [group: 'org.projectlombok', name: 'lombok', version: providedLibVersions.lombok],
     )
 
-    compileOnly(
-            [group: 'org.projectlombok', name: 'lombok', version: providedLibVersions.lombok],
-    )
+    kapt "com.google.dagger:dagger-android-processor:${libVersions.dagger}"
+    kapt "com.google.dagger:dagger-compiler:${libVersions.dagger}"
+    kapt group: 'org.robobinding', name: 'codegen', version: libVersions.robobinding
+//    kapt "org.projectlombok:lombok:$providedLibVersions.lombok"
+
+//    provided "org.projectlombok:lombok:$providedLibVersions.lombok"
+
+//    compileOnly(
+//            [group: 'org.projectlombok', name: 'lombok', version: providedLibVersions.lombok],
+//    )
 }

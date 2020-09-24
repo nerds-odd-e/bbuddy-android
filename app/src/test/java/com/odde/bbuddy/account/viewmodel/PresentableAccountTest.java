@@ -14,7 +14,7 @@ public class PresentableAccountTest {
         PresentableAccount presentableAccount = new PresentableAccount();
         ItemContext stubItemContext = mock(ItemContext.class);
 
-        presentableAccount.updateData(anAccount().name("name").balanceBroughtForward(100).build(), stubItemContext);
+        presentableAccount.updateData(anAccount().setName("name").setBalanceBroughtForward(100).createAccount(), stubItemContext);
 
         assertEquals("name 100", presentableAccount.getDisplayOfAccount());
     }

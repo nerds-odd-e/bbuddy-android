@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -32,7 +34,7 @@ android {
         exclude 'META-INF/LICENSE'
     }
     lintOptions {
-        abortOnError true
+        abortOnError false
         disable 'OnClick', 'IconDensities', 'GoogleAppIndexingWarning'
         lintConfig rootProject.file('app/gradle/lint.xml')
     }

@@ -66,7 +66,7 @@ public class EditableAccount {
     }
 
     private void addAccount() {
-        accountsApi.addAccount(new Account(name, balanceBroughtForward, 0), new Runnable() {
+        accountsApi.addAccount(new com.odde.bbuddy.account.builder.AccountBuilder2().setName(name).setBalanceBroughtForward(balanceBroughtForward).setId(0).createAccount(), new Runnable() {
             @Override
             public void run() {
                 accountsNavigation.navigate();
@@ -104,7 +104,7 @@ public class EditableAccount {
     }
 
     private void editAccount() {
-        accountsApi.editAccount(new Account(name, balanceBroughtForward, id), new Runnable() {
+        accountsApi.editAccount(new com.odde.bbuddy.account.builder.AccountBuilder2().setName(name).setBalanceBroughtForward(balanceBroughtForward).setId(id).createAccount(), new Runnable() {
             @Override
             public void run() {
                 accountsNavigation.navigate();
@@ -113,7 +113,7 @@ public class EditableAccount {
     }
 
     public void delete() {
-        Account account = new Account();
+        Account account = new com.odde.bbuddy.account.builder.AccountBuilder2().createAccount();
         account.setId(id);
         accountsApi.deleteAccount(account, new Runnable() {
             @Override

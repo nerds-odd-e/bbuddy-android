@@ -5,18 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Account implements Serializable {
 
     private String name;
@@ -24,4 +13,36 @@ public class Account implements Serializable {
     private int balanceBroughtForward;
     private int id;
 
+    public Account(String name, int balanceBroughtForward, int id) {
+        this.name = name;
+        this.balanceBroughtForward = balanceBroughtForward;
+        this.id = id;
+    }
+
+    public Account() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBalanceBroughtForward() {
+        return balanceBroughtForward;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBalanceBroughtForward(int balanceBroughtForward) {
+        this.balanceBroughtForward = balanceBroughtForward;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

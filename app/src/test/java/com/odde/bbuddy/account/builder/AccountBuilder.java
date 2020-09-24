@@ -1,14 +1,12 @@
 package com.odde.bbuddy.account.builder;
 
-import com.odde.bbuddy.account.viewmodel.Account;
-
 public class AccountBuilder {
 
-    public static Account.AccountBuilder anAccount() {
-        return Account.builder().id(1).name("name").balanceBroughtForward(100);
+    public static AccountBuilder2 anAccount() {
+        return new AccountBuilder2().setId(1).setName("name").setBalanceBroughtForward(100);
     }
 
-    public static Account.AccountBuilder emptyAccount() {
-        return Account.builder();
+    public static AccountBuilder2 emptyAccount() {
+        return new AccountBuilder2();
     }
 }

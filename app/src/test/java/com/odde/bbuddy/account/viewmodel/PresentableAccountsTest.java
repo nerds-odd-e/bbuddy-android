@@ -28,7 +28,7 @@ public class PresentableAccountsTest {
     EditDeleteAccountNavigation mockEditDeleteAccountNavigation = mock(EditDeleteAccountNavigation.class);
     Lazy<PresentationModelChangeSupport> mockChangeSupportLazyLoader = mock(Lazy.class);
     PresentationModelChangeSupport mockPresentationModelChangeSupport = mock(PresentationModelChangeSupport.class);
-    private final Account account = anAccount().build();
+    private final Account account = anAccount().createAccount();
     private PresentableAccounts presentableAccounts = createPresentableAccounts();
 
     @Before

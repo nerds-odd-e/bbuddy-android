@@ -39,7 +39,7 @@ public class EditableAccountTest {
         public void add_should_correctly_add_account() {
             addAccount("name", 100);
 
-            verifyAccountsAddWithAccount(emptyAccount().name("name").balanceBroughtForward(100).build());
+            verifyAccountsAddWithAccount(emptyAccount().setName("name").setBalanceBroughtForward(100).createAccount());
         }
 
         @Test
@@ -71,7 +71,7 @@ public class EditableAccountTest {
 
             editAccount("name", 100);
 
-            verifyAccountsEditWithAccount(emptyAccount().id(1).name("name").balanceBroughtForward(100).build());
+            verifyAccountsEditWithAccount(emptyAccount().setId(1).setName("name").setBalanceBroughtForward(100).createAccount());
         }
 
         @Test
@@ -103,7 +103,7 @@ public class EditableAccountTest {
 
             editableAccount.delete();
 
-            verifyAccountsDeleteWithAccount(emptyAccount().id(1).build());
+            verifyAccountsDeleteWithAccount(emptyAccount().setId(1).createAccount());
         }
 
         @Test
